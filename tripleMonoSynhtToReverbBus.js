@@ -1,3 +1,4 @@
+// create three monosynths
 m = Monosynth({ 
   detune2:-.5, detune3:1, antialias:true, octave:-2, gain:1
 }).note.seq( 0, 1/4 ).disconnect()
@@ -8,7 +9,7 @@ n = Monosynth({
   detune2:-.5, detune3:1, antialias:true, octave:2, gain: 0.25
 }).note.seq( [0, 4, 5, 2], [3/8, 1/16, 1/16, 1/8, 1/8, 1/8, 1/4] ).disconnect()
 
-
+// route them to a reverb bus
 verb = Reverb({roomSize: .95, dry:1}).bus()
 m.connect(verb)
 l.connect(verb)
